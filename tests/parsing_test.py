@@ -1,20 +1,8 @@
 from env_parser import config
+from .results.parsing_test import results
 from env_parser.errors import InvalidEnvValue, EnvNotFoundError
 import pytest
 import os
-
-results = [
-    {
-        'REDIS_URL': 'redis://localhost:8003',
-        'MAX_TIME': 2
-    },
-    {
-        'REDIS_URL': 'redis://localhost:8003',
-        'MAX_TIME': 4,
-        'THRESH': 0.25,
-        'DEV_MODE': True
-    }
-]
 
 class TestParsing:
     def test_parse_and_non_required_value(self, test_id = 0):
