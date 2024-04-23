@@ -41,6 +41,7 @@ jobs:
 
     - name: Test with pytest
       run: |
+        poetry lock
         cd ./tests
         pytest multiple_environs.py
         pytest parsing_test.py
