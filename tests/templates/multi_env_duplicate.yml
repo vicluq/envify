@@ -1,0 +1,29 @@
+envs:
+  multi: true
+  active: 'development'
+  development:
+    redis_url:
+      name: 'REDIS_URL'
+      description: "The redis database URL"
+      options: ['redis://localhost:8003']
+      required: true
+      value_type: 'str'
+  staging:
+    redis_url:
+      name: 'REDIS_URL'
+      description: "The redis database URL"
+      options: ['redis://localhost:6937']
+      required: true
+      value_type: 'str'
+    database:
+      name: 'REDIS_URL'
+      description: "The SQL database URL"
+      options: []
+      required: true
+      value_type: 'str'
+  production:
+    redis_url:
+      name: 'REDIS_URL'
+      description: "The redis database URL"
+      required: true
+      value_type: 'str'

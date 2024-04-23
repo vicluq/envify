@@ -1,0 +1,53 @@
+envs:
+  multi: true
+  active: 'development'
+  development:
+    redis_url:
+      name: 'REDIS_URL'
+      description: "The redis database URL"
+      options: ['redis://localhost:8003']
+      required: true
+      value_type: 'str'
+    max_time:
+      name: 'MAX_TIME'
+      description: "The max time the logic function can execute"
+      options: [2, 4, 5, 10]
+      required: true
+      value_type: 'int'
+    thresh:
+      name: 'THRESH'
+      description: "The threshould"
+      options: []
+      required: false
+      value_type: 'float'
+  staging:
+    redis_url:
+      name: 'REDIS_URL'
+      description: "The redis database URL"
+      options: ['redis://localhost:6937']
+      required: true
+      value_type: 'str'
+    max_time:
+      name: 'MAX_TIME'
+      description: "The max time the logic function can execute"
+      options: []
+      required: true
+      value_type: 'int'
+    thresh:
+      name: 'THRESH'
+      description: "The threshould"
+      options: []
+      required: true
+      value_type: 'float'
+  production:
+    redis_url:
+      name: 'REDIS_URL'
+      description: "The redis database URL"
+      required: true
+      value_type: 'str'
+    max_time:
+      name: 'MAX_TIME'
+      description: "The max time the logic function can execute"
+      options: []
+      required: true
+      value_type: 'int'
