@@ -31,7 +31,3 @@ def config(config_path: str):
 
     return loaded
 
-
-if __name__ == '__main__':
-    envs = config('./test.yml')
-    print(envs)
