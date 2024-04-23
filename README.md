@@ -62,3 +62,5 @@ In your `.env` (or wherever you put your envs), for each type of environment, th
 - `PROD_` for `production`
 
 The loader will return a tuple: `(active, envs)` with the active environments and all of the parsed environments, respectively.
+
+If no `active` is provided, it will return `(None, envs)`.
