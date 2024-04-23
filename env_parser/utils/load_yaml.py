@@ -1,4 +1,4 @@
-from models.config import EnvConfiguration, Config
+from ..models.config import EnvConfiguration, Config
 import yaml
 
 def load_yaml(config_path: str) -> EnvConfiguration:
@@ -10,6 +10,7 @@ def load_yaml(config_path: str) -> EnvConfiguration:
             try:
                 parsed[k] = Config(**data)
             except Exception as err:
+                print(err)
                 raise err
         file.close()
         

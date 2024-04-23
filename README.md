@@ -1,6 +1,6 @@
 # Env Parser
 
-A friendly enviroment variable configurable to describe envs and parse them. This will make documenting environment variables easier.
+A friendly enviroment variable parser to describe envs and parse them. This will make documenting environment variables easier.
 
 ## Basic Usage
 

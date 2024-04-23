@@ -1,0 +1,30 @@
+envs:
+  redis_url:
+    name: 'REDIS_URL'
+    description: "The redis database URL"
+    options: ['redis://localhost:8003']
+    required: true
+    value_type: 'str'
+  amqp_url:
+    name: 'AMQP_URL'
+    description: "The AMQP service url"
+    options: ['amqp://localhost:57017']
+    required: false
+    value_type: 'str'
+  max_time:
+    name: 'MAX_TIME'
+    description: "The max time the logic function can execute"
+    options: [2, 4, 5, 10]
+    required: true
+    value_type: 'int'
+  thresh:
+    name: 'THRESH'
+    description: "The threshould"
+    options: []
+    required: false
+    value_type: 'float'
+  dev_mode:
+    name: 'DEV_MODE'
+    description: "If it is in dev mode."
+    required: false
+    value_type: 'bool'

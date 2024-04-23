@@ -1,1 +1,1 @@
-from main import config
+from .main import config
