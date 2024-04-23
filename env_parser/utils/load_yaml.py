@@ -1,17 +1,9 @@
-from ..models.config import EnvConfiguration, Config
+from ..models.config import Loaded
 import yaml
 
-def load_yaml(config_path: str) -> EnvConfiguration:
-    parsed: EnvConfiguration = {}
-    
+def load_yaml(config_path: str) -> Loaded:
     with open(config_path, 'r') as file:
         config_data = yaml.safe_load(file)['envs']
-        for k, data in config_data.items():
-            try:
-                parsed[k] = Config(**data)
-            except Exception as err:
-                print(err)
-                raise err
         file.close()
-        
-    return parsed
+
+    return config_data

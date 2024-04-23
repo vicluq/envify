@@ -42,4 +42,5 @@ jobs:
     - name: Test with pytest
       run: |
         cd ./tests
+        pytest multiple_environs.py
         pytest parsing_test.py

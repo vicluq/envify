@@ -40,12 +40,13 @@ The `config` function returns a `dict` with the parsed envs converted to it's ty
 - `value_type`: a string representing the convertion type of the env value
     - Currently supports: `str`, `int`, `bool` and `float`
 
-## Multiple Environments
+## Multiple Environs
 
-To use environments, you must add them as top level after the `envs:` directive. We have three possible environments: `development`, `staging`, `production`.
+To use multiple environs, must set the `multi` key to `true` and you have to add them as top level after the `envs:` directive. We have three possible environs: `development`, `staging`, `production`.
 
 ```yaml
 envs:
+    multi: true
     active: 'development' | 'staging' | 'production' 
     development:
         # Normal env declaration
@@ -55,12 +56,21 @@ envs:
         # Normal env declaration
 ```
 
-In your `.env` (or wherever you put your envs), for each type of environment, the env must have the correct prefix:
+In your `.env` (or wherever you put your envs), for each type of environ, the env must have the correct prefix:
 
 - `DEV_` for `development`
 - `STAG_` for `staging`
 - `PROD_` for `production`
 
-The loader will return a tuple: `(active, envs)` with the active environments and all of the parsed environments, respectively.
+The loader will return a tuple: `(active, envs)` with the active environ and all of the parsed environs, respectively.
 
 If no `active` is provided, it will return `(None, envs)`.
+
+If you enable environs, you can't have misplaced envs outside of them to avoid possible security issues.
+
+### Possible Errors
+
+- If an environment is empty, it will issue a waring
+- If a name different than the reserved ones for a eviron is giver, it will issue an error
+    - _Custom environs are in progress!_
+- If your not using environments and make use of the `active: true|false` directive, it will treat it as a env variable and issue a invalid env error

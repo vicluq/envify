@@ -12,3 +12,8 @@ class_type = {
     ValueType.FLOAT: float,
     ValueType.BOOL: bool,
 }
+
+class Environments(Enum):
+    DEV_ = 'development'    
+    PROD_ = 'production'    
+    STAG_ = 'staging'
