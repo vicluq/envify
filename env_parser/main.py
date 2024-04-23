@@ -18,7 +18,7 @@ def config(config_path: str):
             raise EnvNotFoundError(msg)
         elif envs.get(data.name):
             if data.options and envs.get(data.name) not in data.options:
-                msg = f'{data.name} should be on of the following: {', '.join(data.options)}'
+                msg = f'{data.name} is not listed inside value options.'
                 raise InvalidEnvValue(msg)
             try:
                 converted = class_type[data.value_type](envs[data.name])
