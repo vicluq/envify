@@ -18,7 +18,7 @@ class TestMultiEnv:
         os.environ['PROD_REDIS_URL'] = 'redis://app.azure.game:6937'
         os.environ['PROD_MAX_TIME'] = '5'
         envs = config(config_path)
-        
+
         os.environ.pop('DEV_REDIS_URL')
         os.environ.pop('DEV_MAX_TIME')
         os.environ.pop('DEV_THRESH')
