@@ -1,5 +1,5 @@
 from pydantic import BaseModel, RootModel
-from ..constants import ValueType
+from ..constants import ValueType, Environments
 from typing import Dict, List, Any
 
 class Config(BaseModel):
@@ -10,3 +10,5 @@ class Config(BaseModel):
     options: List[Any] | None = None
 
 EnvConfiguration = RootModel[Dict[str, Config]]
+Environment = RootModel[Dict[Environments, EnvConfiguration]]
+Loaded = RootModel[Dict[str, dict]]

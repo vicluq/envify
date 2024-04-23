@@ -1,0 +1,5 @@
+envs:
+  multi: true
+  active: 'staging'
+  development:
+  production:
