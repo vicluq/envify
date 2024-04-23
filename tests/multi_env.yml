@@ -7,12 +7,6 @@ envs:
       options: ['redis://localhost:8003']
       required: true
       value_type: 'str'
-    amqp_url:
-      name: 'AMQP_URL'
-      description: "The AMQP service url"
-      options: ['amqp://localhost:57017']
-      required: false
-      value_type: 'str'
     max_time:
       name: 'MAX_TIME'
       description: "The max time the logic function can execute"
@@ -25,10 +19,5 @@ envs:
       options: []
       required: false
       value_type: 'float'
-    dev_mode:
-      name: 'DEV_MODE'
-      description: "If it is in dev mode."
-      required: false
-      value_type: 'bool'
   staging:
   production:

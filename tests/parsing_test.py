@@ -1,6 +1,6 @@
 from env_parser import config
 from .results.parsing_test import results
-from env_parser.errors import InvalidEnvValue, EnvNotFoundError
+from env_parser.errors import InvalidEnvValueError, EnvNotFoundError
 import pytest
 import os
 
@@ -9,7 +9,7 @@ class TestParsing:
         config_path = './test.yml'
         os.environ['REDIS_URL'] = 'redis://localhost:8003'
         os.environ['MAX_TIME'] = '2'
-        
+
         envs = config(config_path)
         os.environ.pop('REDIS_URL')
         os.environ.pop('MAX_TIME')
@@ -28,7 +28,6 @@ class TestParsing:
         os.environ.pop('MAX_TIME')
         os.environ.pop('THRESH')
         os.environ.pop('DEV_MODE')
-        print(envs)
         assert envs == results[test_id]
     
     def test_missing_required_error(self):
@@ -49,5 +48,5 @@ class TestParsing:
         os.environ['THRESH'] = '0.25'
         os.environ['DEV_MODE'] = 'true'
         
-        with pytest.raises(InvalidEnvValue) as err:
+        with pytest.raises(InvalidEnvValueError) as err:
             config(config_path)
