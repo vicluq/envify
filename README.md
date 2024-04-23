@@ -39,3 +39,26 @@ The `config` function returns a `dict` with the parsed envs converted to it's ty
 - `required`: if the env variable is required or not
 - `value_type`: a string representing the convertion type of the env value
     - Currently supports: `str`, `int`, `bool` and `float`
+
+## Multiple Environments
+
+To use environments, you must add them as top level after the `envs:` directive. We have three possible environments: `development`, `staging`, `production`.
+
+```yaml
+envs:
+    active: 'development' | 'staging' | 'production' 
+    development:
+        # Normal env declaration
+    staging:
+        # Normal env declaration
+    production:
+        # Normal env declaration
+```
+
+In your `.env` (or wherever you put your envs), for each type of environment, the env must have the correct prefix:
+
+- `DEV_` for `development`
+- `STAG_` for `staging`
+- `PROD_` for `production`
+
+The loader will return a tuple: `(active, envs)` with the active environments and all of the parsed environments, respectively.
