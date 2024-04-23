@@ -1,6 +1,6 @@
 from env_parser import config
 from .results.parsing_test import results
-from env_parser.errors import EnvNotFoundError, DuplicateEnvVariableError, InvalidEnvValueError
+from env_parser.errors import InvalidEnvValueError, DuplicateEnvVariableError, EnvNotFoundError
 import pytest
 import os
 
