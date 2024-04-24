@@ -1,17 +1,16 @@
 [tool.poetry]
-name = "env-parser"
+name = "envify"
 version = "1.0.0"
 description = "A friendly enviroment variable parser to describe envs and parse them. This will make documenting environment variables easier."
 authors = ["Victoria Luquet <victoria.tewari@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 pydantic = "^2.7.0"
 pyyaml = "^6.0.1"
 python-dotenv = "^1.0.1"
 pytest = "^8.1.1"
-
 
 [build-system]
 requires = ["poetry-core"]
