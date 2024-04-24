@@ -1,6 +1,6 @@
-from env_parser import config
+from envify import config
 from .results.parsing_test import results
-from env_parser.errors import InvalidEnvironmentError, EnvNotFoundError, ActiveEnvironmentError, DuplicateEnvVariableError
+from envify.errors import InvalidEnvironmentError, EnvNotFoundError, ActiveEnvironmentError, DuplicateEnvVariableError
 import pytest
 import os
 
