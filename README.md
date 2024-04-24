@@ -1,6 +1,8 @@
-# Env Parser
+# Envify
 
 A friendly enviroment variable parser to describe envs and parse them. This will make documenting environment variables easier.
+
+See more at pypi.org/project/envify.
 
 ## Basic Usage
 
